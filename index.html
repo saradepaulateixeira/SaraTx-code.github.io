@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="chave" onclick="chave()">chave</button>
+    <button id="porta"  hidden onclick="porta()">porta </button>
+    <button id="fechadura"  hidden onclick="fechadura()">fechadura</button>
+    <button id="trinco" hidden onclick="trinco()">trinco </button>
+    <button id="abre" hidden onclick="abre()">abre</button>
+    <img id="gif" hidden src="https://media.giphy.com/media/xT41JICjl8yyc/giphy.gif" alt="">
+    <audio id="portaAudio" src="porta.mp3"></audio>
+</body>
+<script> 
+
+    function chave() {
+        document.getElementById("fechadura").hidden = false
+        document.getElementById("chave").hidden = true
+    }
+    function abre() {
+        document.getElementById("trinco").hidden = false
+        document.getElementById("abre").hidden = true
+    }
+    function fechadura() {
+        document.getElementById("abre").hidden = false
+        document.getElementById("fechadura").hidden = true
+    }
+    function trinco() {
+        document.getElementById("porta").hidden = false
+        document.getElementById("trinco").hidden = true
+    }
+    function porta() {
+        document.getElementById("gif").hidden= false
+        document.getElementById("porta").hidden=true
+        const timer = setInterval(function() {
+            document.getElementById("portaAudio").setAttribute('autoplay','true')
+
+        }, 2000)
+     
+    }
+
+
+</script>
+</html>
